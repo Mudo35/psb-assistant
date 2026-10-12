@@ -1,0 +1,16 @@
+'use client'
+
+import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+
+const vocations = [
+  ['PPLG', 'Pengembangan Perangkat Lunak dan Gim', 'Membangun aplikasi, website, gim, dan solusi digital melalui pemrograman serta desain teknologi.'],
+  ['TJKT', 'Teknik Jaringan Komputer dan Telekomunikasi', 'Mempelajari jaringan, perangkat komputer, keamanan siber, dan teknologi komunikasi masa kini.'],
+  ['AKL', 'Akuntansi dan Keuangan Lembaga', 'Mengembangkan keterampilan pencatatan, pengelolaan keuangan, perpajakan, dan administrasi bisnis.'],
+  ['MPLB', 'Manajemen Perkantoran dan Layanan Bisnis', 'Menyiapkan siswa menjadi tenaga profesional dalam administrasi, pelayanan, dan pengelolaan kantor.'],
+  ['AKC', 'Asisten Keperawatan dan Caregiving', 'Mempelajari dasar-dasar keperawatan, perawatan pasien, pertolongan pertama, serta pendampingan yang penuh empati.'],
+]
+
+export default function JurusanPage() {
+  return <main className="min-h-screen bg-[#f7f9fc] text-slate-900"><header className="border-b border-slate-200/80 bg-white/90 backdrop-blur"><div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10"><a href="/" className="flex items-center gap-3"><img src="/logomuh1.jpg" alt="Logo SMK Muhammadiyah 1 Kota Sukabumi" className="size-11 rounded-xl object-cover shadow-lg shadow-sky-900/10" /><div><p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#075985]">SMK MUHAMMADIYAH 1</p><p className="text-sm text-slate-500">Kota Sukabumi</p></div></a><nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex" aria-label="Navigasi utama"><a href="/">Beranda</a><a href="/profil">Profil sekolah</a><a href="/jurusan" className="text-[#075985]">Kompetensi keahlian</a></nav></div></header><section className="bg-[#075985] px-6 py-20 text-white lg:px-10 lg:py-24"><div className="mx-auto max-w-7xl"><a href="/" className="inline-flex items-center gap-2 text-sm text-sky-200 hover:text-white"><ArrowLeft data-icon="inline-start" /> Kembali ke beranda</a><p className="mt-12 text-sm font-bold uppercase tracking-[0.2em] text-sky-200">Pilihan masa depan</p><h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">Lima kompetensi untuk lima cara berkarya.</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-sky-100">Pilih bidang yang sesuai dengan minat, bakat, dan cita-citamu bersama SMK Muhammadiyah 1 Kota Sukabumi.</p></div></section><section className="mx-auto max-w-7xl px-6 py-16 lg:px-10"><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{vocations.map(([code, title, description], index) => <article key={code} className={`rounded-[2rem] border border-slate-200 bg-white p-7 ${index === 0 ? 'lg:col-span-2' : ''}`}><span className="inline-flex rounded-xl bg-sky-50 px-3 py-1.5 text-xs font-bold tracking-wider text-sky-700">{code}</span><h2 className="mt-8 max-w-lg text-2xl font-semibold leading-tight">{title}</h2><p className="mt-4 max-w-xl leading-7 text-slate-600">{description}</p><div className="mt-8 h-1 w-16 rounded-full bg-sky-500" /></article>)}</div><div className="mt-12 flex flex-wrap gap-3"><Button asChild className="rounded-full bg-[#075985] hover:bg-[#064e75]"><a href="/profil">Pelajari profil sekolah <ArrowRight data-icon="inline-end" /></a></Button></div></section></main>
+}

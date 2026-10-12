@@ -1,0 +1,11 @@
+### Health
+GET http://localhost:3001/health
+
+### Chat widget
+POST http://localhost:3001/chat
+Content-Type: application/json
+
+{
+  "pesan": "Apa itu PPLG?",
+  "riwayat": []
+}

@@ -14,7 +14,7 @@ const gemini = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 loadIndex(); // muat knowledge base (RAG) ke memori saat server start
 
-const MODEL_NAME = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
+const MODEL_NAME = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite';
 const PORT = process.env.PORT || 3001;
 const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || 'http://localhost:3000';
 

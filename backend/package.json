@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "ingest": "node ingest.js",
+    "test:rag": "node test-retrieval.js"
   },
   "keywords": [],
   "author": "",

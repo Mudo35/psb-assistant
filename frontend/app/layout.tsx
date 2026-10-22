@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { PageTranslator } from '@/components/page-translator'
 
 export const metadata: Metadata = {
   title: 'SMK Muhammadiyah 1 Kota Sukabumi | PSB Assistant',
@@ -39,9 +40,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="id" suppressHydrationWarning>
       <body className="antialiased">
         {children}
+        <PageTranslator />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

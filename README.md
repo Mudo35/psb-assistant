@@ -48,3 +48,12 @@ Cek pencarian: `npm run test:rag -- "berapa SPP per bulan?"`
 - Kalau `data/index.json` belum ada, bot tetap jalan dengan memakai seluruh isi `knowledge/`.
 - Untuk deploy, **commit `data/index.json` dan `knowledge/`** lalu push (jangan masukkan ke `.gitignore`). Gunakan repo GitHub Private.
 - Atur ambang pencarian lewat `RAG_MIN_SCORE` (default 0.4) dan `RAG_TOP_K` (default 5).
+
+## Bahasa & mata uang
+
+Di chat ada menu bahasa (22 pilihan bahasa + negara). Saat diganti:
+- Seluruh teks website diterjemahkan lewat `POST /api/translate` (Gemini), di-cache di browser.
+- Bot menjawab dalam bahasa itu, dan harga dikonversi ke mata uang negaranya (nilai rupiah asli tetap ditampilkan).
+- Kurs diambil dari open.er-api.com (tanpa API key, update harian, wajib atribusi, sudah ada di widget). Jika gagal diakses, dipakai kurs cadangan perkiraan di `backend/currency.js`.
+
+Menambah bahasa: tambah satu baris di `backend/locales.js` dan `frontend/lib/locales.ts` (kode, bahasa, negara, mata uang).
